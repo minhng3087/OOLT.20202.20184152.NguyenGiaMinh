@@ -10,11 +10,12 @@ public class CalculateTwoNumbers {
         System.out.printf("Difference: %d\n", number1 - number2);
         System.out.printf("Product: %d\n", number1 * number2);
         if(number2 != 0) {
-            int quotient = number1 / number2;
-            System.out.printf("Quotient: %d\n", quotient);
+            float quotient = (float)number1 / number2;
+            System.out.printf("Quotient: %f\n", quotient);
         }else {
             System.out.printf("Quotient: Error\n");
         }
+        in.close();
 
 
     }

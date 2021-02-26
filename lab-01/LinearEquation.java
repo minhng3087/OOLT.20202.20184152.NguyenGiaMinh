@@ -7,12 +7,12 @@ public class LinearEquation {
         System.out.print("Input 2nd integer: ");
         int number2 = in.nextInt();
         if(number1 != 0) {
-            double result = (-number2) / number1;
+            float result = (float) -number2 / number1;
             System.out.printf("Quotient: %f\n", result);
         }else {
             System.out.printf("Error\n");
         }
-
+        in.close();
 
     }
 }

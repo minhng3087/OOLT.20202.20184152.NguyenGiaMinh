@@ -22,6 +22,6 @@ public class QuadraticEquationTwo {
         }
 
         
-
+        in.close();
     }
 }

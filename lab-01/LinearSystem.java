@@ -25,6 +25,6 @@ public class LinearSystem {
             System.out.println("Error");
 
         }
-
+        in.close();
     }
 }
