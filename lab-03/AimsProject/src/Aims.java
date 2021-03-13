@@ -29,7 +29,7 @@ public class Aims {
         // System.out.println (anOrder.totalCost());
 
         Mydate date = new Mydate();
-        // date.accept();
+        date.accept();
         date.print();
 
 
