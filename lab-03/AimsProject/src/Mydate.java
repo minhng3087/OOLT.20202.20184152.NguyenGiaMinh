@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Scanner;
 public class Mydate {
     private int day;
@@ -5,9 +6,10 @@ public class Mydate {
     private int year;
 
     public Mydate() {
-        this.day = 0;
-        this.month = 0;
-        this.year = 0;
+        Calendar cal = Calendar.getInstance();
+        this.day = cal.get(Calendar.DAY_OF_MONTH);
+        this.month = cal.get(Calendar.MONTH)+1;
+        this.year = cal.get(Calendar.YEAR);
     }
 
     public Mydate(int day, int month, int year) {
@@ -15,13 +17,14 @@ public class Mydate {
         this.month = month;
         this.year = year;
     }
-
-    public Mydate(Mydate d) {
-        this.day = d.day;
-        this.month = d.month;
-        this.year = d.year;
+ 
+    public Mydate(String date) {
+        String part[] = date.split("/");
+        this.day = Integer.parseInt(part[0]);
+        this.month = Integer.parseInt(part[1]);;
+        this.year = Integer.parseInt(part[2]);
+        
     }
-
     public int getDay() {
         return day;
     }
@@ -88,10 +91,17 @@ public class Mydate {
         return false;
     }
 
-    public boolean validate() {    
-        if(this.year <= 0 || (this.month < 1 || this.month > 12) || (this.day< 1 || this.day> 31) || this.day> this.getDaysInMonth()) 
-            return true;
-        return false;
+    public String validate() {    
+        if(this.year <= 0) {
+            return "Invalid year";
+        }else if (this.month < 1 || this.month > 12) {
+            return "Invalid month";
+        }else if (this.day < 1 || this.day > 31) {
+            return "Invalid day";
+        }else if (this.day > this.getDaysInMonth()) {
+            return "Month " + this.month + " don't have " + this.day + " days";
+        }else
+            return "Not error";
             
     }
 
@@ -107,11 +117,11 @@ public class Mydate {
     }
 
     public void print() {
-        if(this.validate()) {
-            System.out.println("Error");
+        if(this.validate().equals("Not error")){
+            System.out.println(this.day + "/" + this.month + "/" + this.year);
         }
         else {
-            System.out.println(this.day + "/" + this.month + "/" + this.year);
+            System.out.println(this.validate());
         }
     }
     
