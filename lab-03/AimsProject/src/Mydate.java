@@ -75,6 +75,7 @@ public class Mydate {
         }
         return false;
     }
+    
 
     public String validate() {    
         if(this.year <= 0) {
@@ -109,8 +110,6 @@ public class Mydate {
             System.out.println(this.validate());
         }
     }
-    
-
-    
-
 }
+
+   

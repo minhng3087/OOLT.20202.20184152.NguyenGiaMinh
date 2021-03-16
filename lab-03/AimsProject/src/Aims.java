@@ -28,9 +28,30 @@ public class Aims {
         // System.out.print("Total Cost is: ");
         // System.out.println (anOrder.totalCost());
 
-        Mydate date = new Mydate();
-        date.accept();
-        date.print();
+        System.out.println("Test1:");
+        Mydate test1 = new Mydate();
+        System.out.println(test1.getDay());
+        System.out.println(test1.getMonth());
+        System.out.println(test1.getYear());
+
+        System.out.println("Test2:");
+        Mydate test2 = new Mydate(3, 4, 2020);
+        System.out.println(test2.getDay());
+        System.out.println(test2.getMonth());
+        System.out.println(test2.getYear());
+
+        System.out.println("Test3: ");
+        Mydate test3 = new Mydate("5/8/2020");
+        System.out.println(test3.getDay());
+        System.out.println(test3.getMonth());
+        System.out.println(test3.getYear());
+
+        test1.accept();
+        System.out.println(test1.getDay());
+        System.out.println(test1.getMonth());
+        System.out.println(test1.getYear());
+
+        test1.print();
 
 
 

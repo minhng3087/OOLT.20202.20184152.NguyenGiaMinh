@@ -9,7 +9,7 @@ public class Order {
             DigitalVideoDisc item = new DigitalVideoDisc(disc.getCategory(), disc.getDirector(), disc.getLength(), disc.getCost());
             this.itemsOrdered[this.qtyOrdered] = item;
             this.qtyOrdered++;
-            System.out.println("The disc " + disc.getTitle() + "has been added");
+            System.out.println("The disc " + disc.getTitle() + " has been added");
         }
         else System.out.println("The order is almost full");
     }
