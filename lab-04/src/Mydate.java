@@ -212,8 +212,8 @@ public class Mydate {
             case 2 -> "d/M/yyyy";
             case 3 -> "dd-MMM-yyyy";
             case 4 -> "MMM d yyyy";
-            case 5 -> "mm-dd-yyyy";
-            default -> "MMMMM dd yyyy";
+            case 5 -> "MM-dd-yyyy";
+            default -> "MMMM dd yyyy";
         };
         
         SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
