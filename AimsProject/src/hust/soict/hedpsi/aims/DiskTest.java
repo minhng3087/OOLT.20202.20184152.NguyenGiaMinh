@@ -23,12 +23,11 @@ public class DiskTest {
         assert anOrder != null;
         anOrder.addDisc(dvd1, dvd2, dvd3, dvd4, dvd5);
 
-		anOrder.check();
+//		anOrder.check();
         System.out.println("=========================================");
-        // total cost before get lucky
+        // total cost before get luck
         System.out.printf("Tong tien truoc khi giam gia: %f %n", anOrder.totalCost());
-		DigitalVideoDisc luckyItem = anOrder.getALuckyItem();
-		System.out.printf("San pham may man la: %s %n", luckyItem.getTitle());
+        anOrder.getALuckyItem();
         System.out.printf("Tong tien sau khi giam gia: %f %n", anOrder.totalCost());
 //		sc.close();
 

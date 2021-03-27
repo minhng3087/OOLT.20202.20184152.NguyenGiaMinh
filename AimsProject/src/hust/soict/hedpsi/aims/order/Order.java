@@ -3,16 +3,14 @@ package hust.soict.hedpsi.aims.order;
 import hust.soict.hedpsi.aims.disc.DigitalVideoDisc;
 import hust.soict.hedpsi.aims.utils.Mydate;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
+
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     public static final int MAX_LIMITTED_ORDERS = 5;
     private int qtyOrdered = 0;
     private static int nbOrders = 0;
-    private static final float thresholdsTotal = 300;
-    private static final float thresholdsSale = 0.2f;
-    private static final int numberOfOrder = 4;
+
     private final DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     private final Mydate dateOrdered = new Mydate();
 
@@ -128,27 +126,14 @@ public class Order {
         }
     }
 
-    public DigitalVideoDisc getALuckyItem(){
-        if(itemsOrdered.length >= numberOfOrder && this.totalCost() >= thresholdsTotal) {
-            if(checkOrder(this)) {
-                int item;
-                do {
-                    double rand = Math.random();
-                    rand *= itemsOrdered.length;
-                    item = (int)rand;
-                } while (itemsOrdered.get(item).getCost() <= this.totalCost()*thresholdsSale);
-                return itemsOrdered.get(item);
-            }
-        }
-        return null;
+    public void getALuckyItem(){
+        int min = 1;
+        int range = MAX_NUMBERS_ORDERED - min + 1;
+        int rand = (int)(Math.random() * range) + min;
+        System.out.println(rand);
+        itemsOrdered[rand] = new DigitalVideoDisc(itemsOrdered[rand].getTitle(), itemsOrdered[rand].getCategory(), itemsOrdered[rand].getDirector(),itemsOrdered[rand].getLength(), 0);
     }
-    private boolean checkOrder(Order order) {
-        for(DigitalVideoDisc media: order.itemsOrdered) {
-            if(media.getCost() <= order.totalCost()*thresholdsSale)
-                return true;
-        }
-        return false;
-    }
+
 }
 
 
