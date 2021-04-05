@@ -134,6 +134,8 @@ public class Order {
         itemsOrdered[rand] = new DigitalVideoDisc(itemsOrdered[rand].getTitle(), itemsOrdered[rand].getCategory(), itemsOrdered[rand].getDirector(),itemsOrdered[rand].getLength(), 0);
     }
 
+    public void removeMedia(String id) {
+    }
 }
 
 
